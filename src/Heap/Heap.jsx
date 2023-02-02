@@ -3,12 +3,25 @@ import Piece from "../Piece/Piece";
 
 import "./Heap.scss";
 
-const Heap = ({ amount }) => {
+const Heap = ({ id: heapId, amount, setSelection }) => {
   const pieces = [];
-  for (let index = 0; index < amount; index++) {
-    pieces.push(<Piece key={`piece_${index}`} />);
+  for (let pieceId = 0; pieceId < amount; pieceId++) {
+    const pieceKey = `piece_${pieceId}`;
+    pieces.push(
+      <Piece
+        key={pieceKey}
+        id={pieceKey}
+        heapId={heapId}
+      />
+    );
   }
-  return <div className='heap'>{pieces}</div>;
+  return (
+    <div
+      className='heap'
+      id={`heap_${heapId}`}>
+      {pieces}
+    </div>
+  );
 };
 
 export default Heap;
