@@ -1,0 +1,12 @@
+.piece{
+    width: 100px;
+    height: 30px;
+    background-color: gold;
+    border-radius: 2px;
+    &:hover, &.selected{
+        cursor: pointer;
+        background-color: rgb(217, 185, 5);
+    }
+
+    
+}
